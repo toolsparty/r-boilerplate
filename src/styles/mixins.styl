@@ -1,0 +1,38 @@
+
+//wrapper content default = 960px
+
+define-container(width = (960/rfs)rem)
+  max-width: width
+  margin: 0 auto
+
+
+define-font(family, size, color, lineHeight = normal, weight = normal, letterSpacing = 0)
+  font-family: family
+  font-size: size
+  font-weight: weight
+  color: color
+  line-height: lineHeight
+  letter-spacing: letterSpacing
+
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
+  background-color startColor
+  if deprecatedWebkitStartPoint && deprecatedWebkitEndPoint
+    background-image -webkit-gradient(linear, deprecatedWebkitStartPoint, deprecatedWebkitEndPoint, color-stop(startInterval, startColor), color-stop(endInterval, endColor))
+    background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+gradient(baseColor, startColor, stopColor)
+  background -webkit-gradient(linear, left bottom, left top,color-stop(0, startColor), color-stop(1, stopColor))
+  background -ms-linear-gradient(bottom, startColor, stopColor)
+  background -moz-linear-gradient(center bottom, startColor 0%, stopColor 100%);
+  background -o-linear-gradient(stopColor, startColor)
+  background-color baseColor
+
+transition(duration = 0.2s, ease = ease-out)
+  -webkit-transition all duration ease
+  -moz-transition all duration ease
+  -o-transition all duration ease
+  transition all duration ease
