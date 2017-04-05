@@ -1,15 +1,15 @@
 // Webpack config for development
-var fs = require('fs');
-var path = require('path');
-var webpack = require('webpack');
+let fs = require('fs');
+let path = require('path');
+let webpack = require('webpack');
 
-var os = require('os');
-var ifaces = os.networkInterfaces();
-var jeet = require('jeet');
-var rupture = require('rupture');
-var localIp = '';
+let os = require('os');
+let ifaces = os.networkInterfaces();
+let jeet = require('jeet');
+let rupture = require('rupture');
+let localIp = '';
 
-var port = '3015';
+let port = '3015';
 
 Object.keys(ifaces).forEach(function (ifname) {
   ifaces[ifname].forEach(function (iface) {
@@ -118,7 +118,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru|en-gb/),
     new webpack.HotModuleReplacementPlugin()
   ],
-  target: 'web', // Make web variables accessible to webpack, e.g. window
+  target: 'web', // Make web letiables accessible to webpack, e.g. window
   stats: true, // Don't show stats in the console
   progress: true,
   stylus: {

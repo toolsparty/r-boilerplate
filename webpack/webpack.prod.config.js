@@ -1,15 +1,15 @@
-var path = require('path');
-var webpack = require('webpack');
-var CleanPlugin = require('clean-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var jeet = require('jeet');
-var rupture = require('rupture');
+let path = require('path');
+let webpack = require('webpack');
+let CleanPlugin = require('clean-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ManifestPlugin = require('webpack-manifest-plugin');
+let jeet = require('jeet');
+let rupture = require('rupture');
 
 module.exports = function () {
-  var rootPath = path.resolve(__dirname, '..');
-  var srcDir = process.env.NODE_ENV === 'production' ? 'production' : 'staging';
-  var outPath = path.join('public', srcDir);
+  let rootPath = path.resolve(__dirname, '..');
+  let srcDir = process.env.NODE_ENV === 'production' ? 'production' : 'staging';
+  let outPath = path.join('public', srcDir);
 
   return {
     context: path.resolve(__dirname, '..'),
@@ -96,7 +96,7 @@ module.exports = function () {
         }
       })
     ],
-    target: 'web', // Make web variables accessible to webpack, e.g. window
+    target: 'web', // Make web letiables accessible to webpack, e.g. window
     stats: {
       colors: true,
       hash: false,
@@ -111,4 +111,4 @@ module.exports = function () {
       import: [path.resolve(__dirname, '../src/styles/common.styl')]
     }
   }
-}
+};

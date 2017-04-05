@@ -1,10 +1,10 @@
-var path = require('path');
-var fs = require('fs');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+let path = require('path');
+let fs = require('fs');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var srcDir = process.env.NODE_ENV === 'production' ? 'production' : 'staging';
-var manifestPath = path.resolve(__dirname, '../public/'+ srcDir + '/manifest.json');
-var manifestFile = '';
+let srcDir = process.env.NODE_ENV === 'production' ? 'production' : 'staging';
+let manifestPath = path.resolve(__dirname, '../public/'+ srcDir + '/manifest.json');
+let manifestFile = '';
 
 try {
   manifestFile = fs.statSync(manifestPath) && JSON.parse(fs.readFileSync(manifestPath).toString());
@@ -12,7 +12,7 @@ try {
   if (err.code === 'ENOENT') console.info('==> ☠  Manifest file does not exists!');
 }
 
-var getManifestItem = (key) => manifestFile && manifestFile[key];
+let getManifestItem = (key) => manifestFile && manifestFile[key];
 
 module.exports = {
   output: {
@@ -27,4 +27,4 @@ module.exports = {
       bundleCssFile: path.join(getManifestItem('main.css'))
     })
   ]
-}
+};
