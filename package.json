@@ -24,8 +24,9 @@
       }
     }
   },
-
-  "dependencies": {},
+  "dependencies": {
+    "semantic-ui-react": "^0.67.2"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "autoprefixer-loader": "^3.2.0",
